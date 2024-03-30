@@ -2,10 +2,11 @@
 using AngularAuthAPI.Context;
 using AngularAuthAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AngularAuthAPI.Controllers
 {
-	public class AppointmentController
+	public class AppointmentController : Controller
 	{
         private readonly AppDbContext _authContext;
         public AppointmentController(AppDbContext appDbContext)
@@ -19,8 +20,12 @@ namespace AngularAuthAPI.Controllers
         {
             //    if (appointmentObj == null)
             //        return BadRequest();
+                
+            if (appointmentObj == null)
+                return BadRequest();
 
-
+            await _authContext.Appointments.AddAsync(appointmentObj);
+            await _authContext.SaveChangesAsync();
 
             return Ok(new
             {
@@ -28,11 +33,6 @@ namespace AngularAuthAPI.Controllers
             });
 
 
-        }
-
-        private IActionResult Ok(object value)
-        {
-            throw new NotImplementedException();
         }
     }
 }
