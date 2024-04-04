@@ -1,45 +1,44 @@
 ﻿<Properties StartupConfiguration="{75A352CF-4CFC-49B5-B23D-C4DA5D857608}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.AngularAuthAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="AngularAuthAPI/Context/AppDbContext.cs">
     <Files>
       <File FileName="AngularAuthAPI/Models/User.cs" />
-      <File FileName="AngularAuthAPI/Context/AppDbContext.cs" Line="11" Column="4" />
+      <File FileName="AngularAuthAPI/Context/AppDbContext.cs" Line="25" Column="10" />
       <File FileName="AngularAuthAPI/Program.cs" />
       <File FileName="AngularAuthAPI/appsettings.json" />
       <File FileName="../../../../../../usr/local/share/dotnet/sdk/7.0.313/Microsoft.Common.CurrentVersion.targets" />
       <File FileName="AngularAuthAPI/Controllers/WeatherForecastController.cs" />
       <File FileName="AngularAuthAPI/Properties/launchSettings.json" />
-      <File FileName="AngularAuthAPI/Controllers/UserController.cs" Line="29" Column="41" />
+      <File FileName="AngularAuthAPI/Controllers/UserController.cs" />
       <File FileName="AngularAuthAPI/Helpers/PasswordHasher.cs" />
-      <File FileName="AngularAuthAPI/Models/Hospital.cs" Line="16" Column="45" />
-      <File FileName="AngularAuthAPI/Models/Appointment.cs" Line="25" Column="52" />
+      <File FileName="AngularAuthAPI/Models/Hospital.cs" />
+      <File FileName="AngularAuthAPI/Models/Appointment.cs" />
+      <File FileName="AngularAuthAPI/Controllers/AppointmentController.cs" />
+      <File FileName="AngularAuthAPI/Controllers/HospitalController.cs" />
+      <File FileName="AngularAuthAPI/Models/Prod.cs" Line="11" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AngularAuthAPI" expanded="True">
-            <Node name="AngularAuthAPI" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Context" expanded="True" />
+            <Node name="AngularAuthAPI">
+              <Node name="Context" expanded="True">
+                <Node name="AppDbContext.cs" selected="True" />
+              </Node>
               <Node name="Controllers" expanded="True" />
+              <Node name="Helpers" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/saichandmeda/Downloads/Projects/angular_auth/AngularAuthAPI/AngularAuthAPI/Context/AppDbContext.cs" relfile="AngularAuthAPI/Context/AppDbContext.cs" line="21" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.AngularAuthAPI PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>
