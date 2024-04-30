@@ -32,27 +32,37 @@ namespace AngularAuthAPI.Controllers
         [HttpPost("authenticate")]
         public async Task<IActionResult> Authenticate([FromBody] User userObj)
         {
-            if (userObj == null)
-                return BadRequest();
-
-            var user = await _authContext.Users
-                .FirstOrDefaultAsync(x => x.UserName == userObj.UserName);
-
-            if (user == null)
-                return NotFound(new { Message = "User Not Found!" });
-
-            if(!PasswordHasher.VerifyPassword(userObj.Password, user.Password))
+            try
             {
-                return BadRequest(new { Message = "Password is Incorrect" });
+                if (userObj == null)
+                    return BadRequest();
+
+                var user = await _authContext.Users
+                    .FirstOrDefaultAsync(x => x.UserName == userObj.UserName);
+
+                if (user == null)
+                    return NotFound(new { Message = "User Not Found!" });
+
+                if (!PasswordHasher.VerifyPassword(userObj.Password, user.Password))
+                {
+                    return BadRequest(new { Message = "Password is Incorrect" });
+                }
+
+                user.Token = CreateJwt(user);
+
+                return Ok(new
+                {
+                    Token = user.Token,
+                    Id = user.Id,
+                    UserName = user.UserName,
+                    Message = "Login Success!"
+                }); ;
             }
-
-            user.Token = CreateJwt(user);
-
-            return Ok(new
+            catch(Exception ex)
             {
-                Token = user.Token,
-                Message = "Login Success!"
-            });
+                throw ex;
+            }
+            
 
         }
 

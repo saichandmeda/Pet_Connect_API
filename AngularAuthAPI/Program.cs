@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using AngularAuthAPI.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -27,6 +28,15 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 {
     option.UseMySQL(builder.Configuration.GetConnectionString("Default"));
 });
+
+
+builder.Services.AddScoped<SqlConnection>(serviceProvider =>
+{
+    var configuration = serviceProvider.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+    return new SqlConnection(connectionString);
+});
+
 
 builder.Services.AddAuthentication(x =>
 {
